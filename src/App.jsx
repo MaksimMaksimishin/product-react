@@ -1,5 +1,3 @@
-// В файле App.jsx
-
 import React, { useEffect, useState } from "react";
 import { getProducts, addProduct, updateProduct, deleteProduct, getCategories, addCategory } from "./API";
 
@@ -11,7 +9,7 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [newCategory, setNewCategory] = useState('');
-  const productsPerPage = 5; // Количество продуктов на странице
+  const productsPerPage = 5; 
   const totalPages = Math.ceil(products.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -33,7 +31,7 @@ const App = () => {
 
   useEffect(() => {
     if (selectedCategory === 'all') {
-      // Если выбрана категория "Все категории", отображаем все продукты
+      
       (async () => {
         try {
           const productsData = await getProducts();
@@ -43,11 +41,11 @@ const App = () => {
         }
       })();
     } else {
-      // Иначе фильтруем продукты по выбранной категории
+      
       const filteredProducts = products.filter(product => product.category === selectedCategory);
       setProducts(filteredProducts);
     }
-  }, [selectedCategory, products]); // Добавлен products в зависимости
+  }, [selectedCategory, products]); 
 
   const handleAddProduct = async () => {
     try {

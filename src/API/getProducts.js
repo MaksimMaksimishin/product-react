@@ -1,13 +1,13 @@
 // В файле API.js
 
 export const getProducts = async () => {
-  const response = await fetch('http://localhost:3000/product');
+  const response = await fetch('http://localhost:3001/product');
   const data = await response.json();
   return data;
 };
 
 export const addProduct = async (newProduct) => {
-  const response = await fetch('http://localhost:3000/product', {
+  const response = await fetch('http://localhost:3001/product', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export const addProduct = async (newProduct) => {
 };
 
 export const updateProduct = async (productId, updatedProduct) => {
-  const response = await fetch(`http://localhost:3000/product/${productId}`, {
+  const response = await fetch(`http://localhost:3001/product/${productId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -31,19 +31,19 @@ export const updateProduct = async (productId, updatedProduct) => {
 };
 
 export const deleteProduct = async (productId) => {
-  await fetch(`http://localhost:3000/product/${productId}`, {
+  await fetch(`http://localhost:3001/product/${productId}`, {
     method: 'DELETE',
   });
 };
 
 export const getCategories = async () => {
-  const response = await fetch('http://localhost:3000/category');
+  const response = await fetch('http://localhost:3001/category');
   const data = await response.json();
   return data;
 };
 
 export const addCategory = async (title) => {
-  const response = await fetch('http://localhost:3000/category', {
+  const response = await fetch('http://localhost:3001/category', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export const addCategory = async (title) => {
 };
 
 export const updateCategory = async (categoryId, updatedCategory) => {
-  const response = await fetch(`http://localhost:3000/category/${categoryId}`, {
+  const response = await fetch(`http://localhost:3001/category/${categoryId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export const updateCategory = async (categoryId, updatedCategory) => {
 };
 
 export const deleteCategory = async (categoryId) => {
-  await fetch(`http://localhost:3000/category/${categoryId}`, {
+  await fetch(`http://localhost:3001/category/${categoryId}`, {
     method: 'DELETE',
   });
 };
